@@ -98,6 +98,12 @@ LFSR <- function(seed, amount)
 
 Uniform  - 3.14620
 
+Difference with Pi ≈ 0.0046
+
 LCG - 3.16496
 
+Difference with Pi ≈ 0.0233
+
 LFSR - 3.12580
+
+Difference with Pi ≈ 0.0157
