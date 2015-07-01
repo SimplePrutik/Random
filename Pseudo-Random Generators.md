@@ -23,11 +23,11 @@ To recreate these experiment you should make following steps:
 3. Click *File* in upper menu, then *Change dir...* and choose directory with downloaded functions.
 4. Write in R console string by string: 
 
-**source("uniform.R")**
+  **source("uniform.R")**
   
-**source("LCG.R")**
+  **source("LCG.R")**
   
-**source("LFSR.R")**
+  **source("LFSR.R")**
 
 5. At last write: 
   
