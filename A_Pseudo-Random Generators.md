@@ -38,3 +38,4 @@ Compiling with accuracy 100000 will take about 9 minutes. As result you will see
 #Conclusion
 
 Uniform distribution took 1st place, LFSR - vice-champion, LCG - consolation prize
+
