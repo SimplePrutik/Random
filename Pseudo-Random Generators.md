@@ -28,6 +28,7 @@ To recreate these experiment you should make following steps:
 **source("LCG.R")**
   
 **source("LFSR.R")**
+
 5. At last write: 
   
 **c("Uniform" = Pi_unif(100000), "LCG" = Pi_LCG(1234567890, 100000), "LFSR" = Pi_LFSR(1234567890, 100000))**
