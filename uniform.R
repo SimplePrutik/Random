@@ -19,3 +19,4 @@ Pi_unif <- function (acc)
 	P <- length(x[x < 1])/length(x)*4
 	P 
 }
+
