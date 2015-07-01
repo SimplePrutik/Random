@@ -33,4 +33,8 @@ To recreate these experiment you should make following steps:
   
   **c("Uniform" = Pi_unif(100000), "LCG" = Pi_LCG(1234567890, 100000), "LFSR" = Pi_LFSR(1234567890, 100000))**
 
-As result you will see a tab with three named columns with appropriate result for each one.
+Compiling with accuracy 100000 will take about 9 minutes. As result you will see a tab with three named columns with appropriate result for each one.
+
+#Conclusion
+
+Uniform distribution took 1st place, LFSR - vice-champion, LCG - consolation prize
