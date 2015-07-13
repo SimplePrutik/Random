@@ -7,8 +7,7 @@ square <- function(x)
 sum2 <- function (...)
 {
 	result <- sum(square(...))
-	result <- sqrt(result)	
-	result
+	sqrt(result)
 }
 
 Pi_LFSR <- function(seed, amount)
