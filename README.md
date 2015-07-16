@@ -6,7 +6,7 @@ Accuracy: 100000 points.
 
 Seed for LCG and LFSR: 1234567890
 
-1. Uniform (Mersenne-twister): 3.14620;  
+1. R Uniform (Mersenne-twister): 3.14620;  
   Difference with Pi ≈ 0.0046
 2. LCG: 3.16496;  
   Difference with Pi ≈ 0.0233
@@ -37,5 +37,5 @@ Compiling with accuracy 100000 will take about 9 minutes. As result you will see
 
 #Conclusion
 
-Uniform distribution (Mersenne-twister) took 1st place, LFSR - vice-champion, LCG - consolation prize
+R Uniform distribution (Mersenne-twister) took 1st place, LFSR - vice-champion, LCG - consolation prize
 
