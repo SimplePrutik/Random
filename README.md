@@ -1,12 +1,12 @@
 #Random numbers
-The aim was to compare three random generators with power of language R: uniform distribution, linear congruential generator, linear feedback shift register. I used Monte-Carlo method for this. I created functions generating random points witch amount set by parameter of function, counting their amount inside a circle and total, dividing first by second and muiltiplying result by 4.
+The aim was to compare three random generators with power of language R: its native algorithm of uniform distribution (Mersenne-twister), linear congruential generator, linear feedback shift register. I used Monte-Carlo method for this. I created functions generating random points witch amount set by parameter of function, counting their amount inside a circle and total, dividing first by second and muiltiplying result by 4.
 
 #Results
 Accuracy: 100000 points.
 
 Seed for LCG and LFSR: 1234567890
 
-1. Uniform: 3.14620;  
+1. Uniform (Mersenne-twister): 3.14620;  
   Difference with Pi ≈ 0.0046
 2. LCG: 3.16496;  
   Difference with Pi ≈ 0.0233
@@ -37,5 +37,5 @@ Compiling with accuracy 100000 will take about 9 minutes. As result you will see
 
 #Conclusion
 
-Uniform distribution took 1st place, LFSR - vice-champion, LCG - consolation prize
+Uniform distribution (Mersenne-twister) took 1st place, LFSR - vice-champion, LCG - consolation prize
 
