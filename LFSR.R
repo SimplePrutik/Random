@@ -1,36 +1,46 @@
-square <- function(x)
-{
-	x*x
-}
+#required functions
+source("rqrd_func.R")
 
-sum2 <- function (...)
-{
-	sqrt(sum(square(...)))
-}
 
-# ^ function which find point location ^
-
-Pi_LFSR <- function(seed, amount)
+#function which create vector of random numbers with LFSR
+rLFSR <- function(n, min = 0, max = 1, seed = as.numeric(Sys.time()))	#n - size of vector, min(max) - minimum(maximum) of generating numbers, seed - number which algorithm begin with
 {
-	res <- c()
-	g <- gl(amount, 2)
-	amount <- amount * 62								#each bit of value is computed independently
-	z <- 0
-	a <- 0
-	while (amount != 0)
+	result <- c()					#empty vector
+	for (i in 1:n)
 	{
-		z <- z + (2^a)*bitwAnd(seed, 1) 					#charging of value
-		a <- a + 1
-		y <- as.logical(bitwAnd(seed, 1)) == as.logical(bitwAnd(seed, 2^3))	#polynomial x^31 + x^28
-		seed <- bitwShiftR(seed, 1) + (2^30)*y					#shift and computing of new number
-		if (a == 31)								
+		z <- 0					
+		for (j in 0:30)
 		{
-			res <- c(res, z/(2^31))						#value is ready for extraction
-			a <- 0								#
-			z <- 0								#readiness to charge new value
+			seed <- bitwShiftR(seed, 1) + (2^30)*(as.logical(bitwAnd(seed, 1)) == as.logical(bitwAnd(seed, 2^3)))	#step of algorithm
+			z <- z + (2^j)*bitwAnd(seed, 1)		#computing of each bit of generating number
 		}
-		amount <- amount - 1
+		result <- c(result, z/(2^31)*(max - min) + min)	#computing of number
+	}	
+	result	
+}
+
+#Monte-Carlo method
+Pi_LFSR <- function(amount, seed = as.numeric(Sys.time()))	#amount - accuracy of test, seed - number which algorithm begin with
+{
+	g <- gl(amount, 2)			#supporting array
+	res <- rLFSR(amount * 2, 0, 1)		#array of random points	
+	x <- tapply(res, g, sum2)		#computing of amount of points
+	length(x[x < 1])/length(x)*4		#computing of Pi
+}
+
+#function for graph
+LFSR <- function (acc, interval, seed = as.numeric(Sys.time()))	#acc - accuracy of test, interval - interval between frames, seed - number which algorithm begin with
+{
+	library(playwith)			#	
+	library(animation)			#supporting libraries
+	m <- matrix(,0,3)			#empty matrix	
+	ani.options(interval = 0.1)		#interval between frames
+	while(nrow(m) < acc)			#loop of frames
+	{
+		m <- add(m, interval, rLFSR)	#enlarging of matrix
+		plot(m[,1],m[,2], col=m[,3], cex = 0.3, xlab = "", ylab = "")	#calling of graph 
+		panel.text(paste("Pi: ", round(sum((m[,3] - 2) * (-1)) / nrow(m) * 4, digits = 4)), x = 140, y = 40)	#output current Pi
+		panel.text(paste("Accuracy: ", nrow(m)), x = 300, y = 40)	#output current accuracy	
+		ani.pause();			#pause between frames
 	}
-	x <- tapply(res, g, sum2)							#applying of function
-	length(x[x < 1])/length(x)*4							#computing of Pi
 }
