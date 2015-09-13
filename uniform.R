@@ -11,12 +11,12 @@ Pi_unif <- function (acc)			#acc - accuracy of test
 }
 
 #function for graph
-Mersenne_Twister <- function (acc, interval)
+Mersenne_Twister <- function (acc, interval)	#acc - accuracy of test, interval - interval between frames
 {
 	library(playwith)				#	
 	library(animation)				#supporting libraries
 	m <- matrix(,0,3)				#empty matrix
-	ani.options(interval = 0.1)			#interval between frames
+	ani.options(interval = 0.1)			#setting interval between frames
 	while(nrow(m) < acc)				#loop of frames
 	{
 		m <- add(m, interval, runif)		#enlarging of matrix
