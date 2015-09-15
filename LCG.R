@@ -29,7 +29,7 @@ Pi_LCG <- function (length, seed = as.numeric(Sys.time()))	#length - accuracy of
 }
 
 #function for graph
-LCG <- function (acc, interval, seed = as.numeric(Sys.time()))	#acc - accuracy of test, interval - interval between frames, seed - number which algorithm begin with
+LCG <- function (acc, interval)	#acc - accuracy of test, interval - interval between frames
 {
 	Graph(acc, interval, rLCG)
 }
