@@ -31,16 +31,5 @@ Pi_LCG <- function (length, seed = as.numeric(Sys.time()))	#length - accuracy of
 #function for graph
 LCG <- function (acc, interval, seed = as.numeric(Sys.time()))	#acc - accuracy of test, interval - interval between frames, seed - number which algorithm begin with
 {
-	library(playwith)				#
-	library(animation)				#supporting libraries
-	m <- matrix(,0,3)				#empty matrix	
-	ani.options(interval = 0.1)			#interval between frames
-	while(nrow(m) < acc)				#loop of frames
-	{
-		m <- add(m, interval, rLCG)		#enlarging of matrix
-		plot(m[,1],m[,2], col=m[,3], cex = 0.3, xlab = "", ylab = "")	#calling of graph 
-		panel.text(paste("Pi: ", round(sum((m[,3] - 2) * (-1)) / nrow(m) * 4, digits = 4)), x = 140, y = 40)	#output current Pi
-		panel.text(paste("Accuracy: ", nrow(m)), x = 300, y = 40)	#output current accuracy	
-		ani.pause();				#pause between frames
-	}
+	Graph(acc, interval, rLCG)
 }
