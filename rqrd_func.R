@@ -18,3 +18,19 @@ add <- function (x, amount, func)	#x - matrix, amount - value of increasing, fun
 	rbind(x,z)													#binding with original matrix
 }
 
+#function for graph
+Graph <- function (acc, interval, func)			#acc - accuracy, interval - value of increasing of amount of points, func - function required for current algorithm		
+{
+	library(playwith)				#	
+	library(animation)				#supporting libraries
+	m <- matrix(,0,3)				#empty matrix
+	ani.options(interval = 0.1)			#setting interval between frames
+	while(nrow(m) < acc)				#loop of frames
+	{
+		m <- add(m, interval, func)		#enlarging of matrix
+		plot(m[,1],m[,2], col=m[,3], cex = 0.3, xlab = "", ylab = "")	#calling of graph 
+		panel.text(paste("Pi: ", round(sum((m[,3] - 2) * (-1)) / nrow(m) * 4, digits = 4)), x = 140, y = 40)	#output current Pi
+		panel.text(paste("Accuracy: ", nrow(m)), x = 300, y = 40)	#output current accuracy	
+		ani.pause();				#pause between frames
+	}
+}
