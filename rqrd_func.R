@@ -19,7 +19,7 @@ add <- function (x, amount, func)	#x - matrix, amount - value of increasing, fun
 }
 
 #function for graph
-Graph <- function (acc, interval, func)			#acc - accuracy, interval - value of increasing of amount of points, func - function required for current algorithm		
+Graph <- function (acc, interval, func)			#acc - accuracy, interval - interval between frames, func - function required for current algorithm		
 {
 	library(playwith)				#	
 	library(animation)				#supporting libraries
