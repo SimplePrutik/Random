@@ -1,15 +1,3 @@
-#function of value squaring
-square <- function(x)     #x - value
-{
-    x*x
-}
-
-#supportng function for Monte-Carlo method
-sum2 <- function (...)
-{
-    sqrt(sum(square(...)))    #did point hit the cicle or not
-}
-
 # Monte-Carlo method
 # accuracy - amount of points
 # func - function of random generator
@@ -18,7 +6,7 @@ Pi <- function (accuracy, func, seed = as.numeric(Sys.time()))
 {
     f <- gl(length, 2)                     #supporting factor
     res <- func(length*2, 0, 1)            #vector of random points    
-    x <- tapply(res, f, sum2)              #computing of amount of points
+    x <- tapply(res, f, function(x) sqrt(sum(x*x)))              #computing of amount of points
     length(x[x < 1])/length(x)*4           #computing of Pi
 }
 
