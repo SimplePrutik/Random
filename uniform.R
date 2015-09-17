@@ -1,5 +1,5 @@
 #required functions
-source("rqrd_func.R")
+source("required_functions.R")
 
 # function for graph
 # acc - accuracy of test
