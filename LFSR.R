@@ -5,8 +5,7 @@ source("required_functions.R")
 # function which create vector of random numbers with LFSR
 # n - size of vector
 # min(max) - minimum(maximum) of generating numbers
-# seed - number which algorithm begin with
-rLFSR <- function(n, min = 0, max = 1, seed = as.numeric(Sys.time()))    
+rLFSR <- function(n, min = 0, max = 1)    
 {
     result <- c()                    #empty vector
     for (i in 1:n)

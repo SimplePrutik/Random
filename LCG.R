@@ -9,15 +9,14 @@ M <- 2^32
 # function which create vector of random numbers with LCG
 # n - size of vector
 # min(max) - minimum(maximum) of generating numbers
-# seed - number which algorithm begin with
-rLCG <- function (n, min = 0, max = 1, seed = as.numeric(Sys.time()))
+rLCG <- function (n, min = 0, max = 1)
 {
     result <- c()                    #empty vector
     for (i in 1:n)
     {
         seed <- (A * seed + C) %% M        #step of algorithm
-        t <- seed / M * (max - min) + min    #generating of number
-        result <- c(result, t)            #pushback to vector
+        t <- seed / M * (max - min) + min  #generating of number
+        result <- c(result, t)             #pushback to vector
     }
     result
 }
