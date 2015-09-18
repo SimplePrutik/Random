@@ -7,6 +7,7 @@ source("required_functions.R")
 # min(max) - minimum(maximum) of generating numbers
 rLFSR <- function(n, min = 0, max = 1)    
 {
+    seed <- as.numeric(Sys.time()) 
     result <- c()                    #empty vector
     for (i in 1:n)
     {

@@ -2,7 +2,7 @@
 # accuracy - amount of points
 # func - function of random generator
 
-seed <- as.numeric(Sys.time())
+seed <- as.numeric(Sys.time())  
 
 Pi <- function (accuracy, func)
 {

@@ -11,6 +11,7 @@ M <- 2^32
 # min(max) - minimum(maximum) of generating numbers
 rLCG <- function (n, min = 0, max = 1)
 {
+    seed <- as.numeric(Sys.time()) 
     result <- c()                    #empty vector
     for (i in 1:n)
     {

@@ -22,19 +22,19 @@ To recreate these experiment you should make following steps:
 2. Download scripts with functions.
 3. Write in R console 
 
-  **setwd(***[path to directory with downloaded functions]***)**
+    setwd('path to directory with downloaded functions')
   
 4. Write in R console string by string: 
 
-  **source("uniform.R")**
+    source("uniform.R")
   
-  **source("LCG.R")**
+    source("LCG.R")
   
-  **source("LFSR.R")**
+    source("LFSR.R")
 
 5. At last write: 
   
-  **c("Uniform" = Pi_unif(100000), "LCG" = Pi_LCG(100000), "LFSR" = Pi_LFSR(100000))**
+    c("Uniform" = Pi_unif(100000), "LCG" = Pi_LCG(100000), "LFSR" = Pi_LFSR(100000))
 
 Compiling with accuracy 100000 will take about 9 minutes. As result you will see a chart with three named columns with appropriate result for each one.
 
@@ -48,23 +48,21 @@ R Uniform distribution (Mersenne-twister) took 1st place, LFSR - vice-champion, 
 
 You need to download special packages for visualization. Write in R console (for Windows):
 
-**install.packages("playwith", lib="c:/Users/***username***/Documents/R/win-library/3.2/")**
+    install.packages("playwith")
 
-**install.packages("animation", lib="c:/Users/***username***/Documents/R/win-library/3.2/")**
-
-If you use not Windows just download these packages somehow :)
+    install.packages("animation")
 
 After this write following:
 
-  **source("uniform.R")**
+    source("uniform.R")
 
-  **source("LCG.R")**
+    source("LCG.R")
   
-  **source("LFSR.R")**
+    source("LFSR.R")
 
 Now all required functions are available continue:
 
-  **playwith()**
+    playwith()
   
 Write down in input line:
 
