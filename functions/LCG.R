@@ -1,5 +1,5 @@
 #required functions
-source("required_functions.R")
+source("../required_functions.R")
 
 #constants for LCG-algorithm
 A <- 23456757
@@ -28,4 +28,9 @@ rLCG <- function (n, min = 0, max = 1)
 LCG <- function (acc, interval)
 {
     Graph(acc, interval, rLCG)
+}
+
+web_LCG <- function (amount)
+{
+    web_Graph(rLCG, amount)
 }

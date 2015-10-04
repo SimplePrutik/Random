@@ -1,8 +1,6 @@
 # Monte-Carlo method
 # accuracy - amount of points
-# func - function of random generator
-
-seed <- as.numeric(Sys.time())  
+# func - function of random generator 
 
 Pi <- function (accuracy, func)
 {
@@ -42,4 +40,14 @@ Graph <- function (acc, interval, func)
         panel.text(paste("Accuracy: ", nrow(m)), x = 300, y = 40)    #output current accuracy    
         ani.pause();                #pause between frames
     }
+}
+
+# gen - generator of random numbers
+# seed - start point of generator
+web_Graph <- function (gen, amount, seed = as.integer(Sys.Date()))
+{
+    m <- matrix(,0,3)
+    m <- add(m, amount, gen)
+    windows.options(width = 5, height = 5)
+    plot(m[,1],m[,2], col=m[,3], cex = 0.3, xlab = "", ylab = "")
 }
