@@ -1,21 +1,27 @@
-shinyUI(fluidPage(
-
-  # Application title
-  titlePanel("Hello World!"),
-
-  # Sidebar with a slider input for the number of bins
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1000,
-                  max = 10000,
-                  value = 30)
-    ),
-
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
+shinyUI(
+    fluidPage
+    (
+        titlePanel("Monte-Carlo"),
+        sidebarLayout
+        ( 
+            sidebarPanel
+            (
+                sliderInput("bins",
+                    "Amount of points",
+                    min = 100,
+                    max = 5000,
+                    value = 1),
+                selectInput("var",
+                    label = "Choose generator",
+                    choices = list("Mersenne-Twister", "LCG", "LFSR"),
+                    selected = "Mersenne-Twister", selectize=TRUE)
+            ),
+            mainPanel
+            (
+                plotOutput("distPlot") 
+            )
+        )
+        
     )
-  )
-))
+
+)

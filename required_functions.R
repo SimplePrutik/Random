@@ -44,10 +44,21 @@ Graph <- function (acc, interval, func)
 
 # gen - generator of random numbers
 # seed - start point of generator
-web_Graph <- function (gen, amount, seed = as.integer(Sys.Date()))
+web_Graph <- function (gen, amount)
 {
+    #parsing selected input
+    if (gen == "Mersenne-Twister")
+        gen <- runif
+    else if (gen == "LCG")
+        gen <- rLCG
+    else if (gen == "LFSR")
+        gen <- rLFSR
+        
     m <- matrix(,0,3)
     m <- add(m, amount, gen)
+    Pi <- sqrt(m[,1] ^ 2 + m[,2] ^ 2)
+    Pi <- length(Pi[Pi < 1])/length(Pi)*4
+    length(x[x < 1])/length(x)*4           #computing of Pi
     windows.options(width = 5, height = 5)
-    plot(m[,1],m[,2], col=m[,3], cex = 0.3, xlab = "", ylab = "")
+    plot(m[,1],m[,2], col=m[,3], cex = 0.3, xlab = "", ylab = "", main = paste("Pi =", Pi), cex.main = 2)    
 }
