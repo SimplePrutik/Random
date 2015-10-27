@@ -1,5 +1,5 @@
 #required functions
-source("../required_functions.R")
+source("required_functions.R")
 
 #constants for LCG-algorithm
 A <- 23456757

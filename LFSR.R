@@ -1,5 +1,5 @@
 #required functions
-source("../required_functions.R")
+source("required_functions.R")
 
 
 # function which create vector of random numbers with LFSR

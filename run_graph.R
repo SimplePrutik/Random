@@ -1,5 +1,8 @@
-shinyUI(
-    fluidPage
+source("LCG.R")
+source("LFSR.R")
+source("Mersenne_Twister.R")
+library(shiny)
+shinyApp(ui = fluidPage
     (
         titlePanel("Monte-Carlo"),
         sidebarLayout
@@ -9,7 +12,7 @@ shinyUI(
                 sliderInput("bins",
                     "Amount of points",
                     min = 100,
-                    max = 5000,
+                    max = 10000,
                     value = 1),
                 selectInput("var",
                     label = "Choose generator",
@@ -22,6 +25,8 @@ shinyUI(
             )
         )
         
-    )
-
-)
+    ), server = function(input, output) 
+{
+  
+  output$distPlot <- renderPlot( {web_Graph(input$var, input$bins)  }, width = 500, height = 500)
+}, options = list(launch.browser = TRUE))
