@@ -1,7 +1,12 @@
 source("LCG.R")
 source("LFSR.R")
 source("Mersenne_Twister.R")
+
+if (!("shiny" %in% rownames(installed.packages())))
+    install.packages("shiny", repos = "https://cran.gis-lab.info/")
+    
 library(shiny)
+
 shinyApp(ui = fluidPage
     (
         titlePanel("Monte-Carlo"),
