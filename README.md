@@ -4,7 +4,7 @@ You should follow several simple instruction to run it.
 
 1. Clone repo - `git clone https://github.com/SimplePrutik/Random.git`
 2. Open cmd/terminal in folder of repo
-3. Write command `Rscript web_graph.R`
+3. Write command `Rscript run_graph.R`
 
 Web-interface is going to load right now.
 
