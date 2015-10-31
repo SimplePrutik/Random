@@ -30,7 +30,3 @@ LCG <- function (acc, interval)
     Graph(acc, interval, rLCG)
 }
 
-web_LCG <- function (amount)
-{
-    web_Graph(rLCG, amount)
-}
