@@ -1,4 +1,3 @@
-#required functions
 source("required_functions.R")
 
 # function for graph
@@ -6,6 +5,7 @@ source("required_functions.R")
 # interval - interval between frames
 Mersenne_Twister <- function (acc, interval)
 {
-    Graph(acc, interval, runif)        #runif - function with inbuilt generator of random numbers
+    # runif - built-in generator of random numbers based on Mersenne Twister:
+    Graph(acc, interval, runif)
 }
 
